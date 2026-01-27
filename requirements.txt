@@ -1,0 +1,21 @@
+# Python dependencies for AI Education Blog System
+# Install with: pip install -r requirements.txt
+
+# Streamlit for web UI
+streamlit>=1.31.0
+
+# MySQL connector
+mysql-connector-python>=8.3.0
+
+# Image handling
+Pillow>=10.2.0
+
+# DOCX file handling and conversion
+python-docx>=1.1.0
+mammoth>=1.6.0
+
+# Fix packaging dependency conflict
+packaging>=24.0
+
+# Additional utilities (optional)
+python-dotenv>=1.0.0
