@@ -603,6 +603,12 @@ elif page == "Site Settings":
                 value=current_config.get('footer_text', SITE_CONFIG['footer_text'])
             )
             
+            acknowledgment = st.text_area(
+                "Acknowledgment (optional)",
+                value=current_config.get('acknowledgment', SITE_CONFIG.get('acknowledgment', '')),
+                help="Optional acknowledgment text that appears below the footer (e.g., funding sources, AI assistance)"
+            )
+            
             st.subheader("Theme Colors")
             col1, col2 = st.columns(2)
             
@@ -623,6 +629,7 @@ elif page == "Site Settings":
                     db.update_site_config('site_title', site_title)
                     db.update_site_config('site_tagline', site_tagline)
                     db.update_site_config('footer_text', footer_text)
+                    db.update_site_config('acknowledgment', acknowledgment)
                     db.update_site_config('primary_color', primary_color)
                     db.update_site_config('accent_color', accent_color)
                     

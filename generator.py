@@ -203,6 +203,7 @@ class SiteGenerator:
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <p class="mb-0">{self.site_config['footer_text']}</p>
+            {f'<p class="mb-0 mt-2"><small>{self.site_config["acknowledgment"]}</small></p>' if self.site_config.get('acknowledgment') else ''}
         </div>
     </footer>
 
@@ -445,6 +446,7 @@ class SiteGenerator:
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <p class="mb-0">{self.site_config['footer_text']}</p>
+            {f'<p class="mb-0 mt-2"><small>{self.site_config["acknowledgment"]}</small></p>' if self.site_config.get('acknowledgment') else ''}
         </div>
     </footer>
 

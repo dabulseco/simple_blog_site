@@ -106,11 +106,16 @@ with col1:
 with col2:
     st.header("⚙️ Generation Options")
     
-    # Site configuration
+    # Site configuration - load from database with config file as fallback
     try:
         site_config = db.get_all_site_config()
         if not site_config:
             site_config = SITE_CONFIG
+        else:
+            # Merge with SITE_CONFIG to ensure all fields exist (especially new ones like acknowledgment)
+            merged_config = SITE_CONFIG.copy()
+            merged_config.update(site_config)
+            site_config = merged_config
     except:
         site_config = SITE_CONFIG
     
